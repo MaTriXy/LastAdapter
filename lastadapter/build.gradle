@@ -2,19 +2,15 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion vSdkTarget
-    buildToolsVersion vBuildTools
-    defaultConfig { minSdkVersion vSdkMin }
-    dataBinding { enabled true }
+    compileSdkVersion sdkTarget_version
+    buildToolsVersion buildTools_version
+    defaultConfig.minSdkVersion sdkMin_version
+    dataBinding.enabled true
 }
 
 dependencies {
-    //compile "com.android.support:appcompat-v7:$vSupport"
-    compile "com.android.support:recyclerview-v7:$vSupport"
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$vKotlin"
-    kapt "com.android.databinding:compiler:$vGradlePlugin"
+    compile "com.android.support:recyclerview-v7:$support_version"
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
-
-kapt { generateStubs = true }
 
 apply from: 'publish.gradle'
